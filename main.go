@@ -24,8 +24,17 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("x-code-error", "async call")
 	w.Header().Set("Content-Type", "text/html")
 	w.WriteHeader(423)
+
+	webdav := `<?xml version="1.0" encoding="utf-8" ?>
+	<D:error xmlns:D="DAV:">
+	  <D:lock-token-submitted>
+		<D:href>Generating in the background... Retry/reload later.</D:href>
+	  </D:lock-token-submitted>
+	</D:error>`
+	fmt.Fprint(w, webdav)
+
 	// fmt.Fprint(w, "<html><body>Generating...</body><script>setTimeout(function() {\n  location.reload();\n}, 2000);\n</script></html>")
-	fmt.Fprint(w, "<html><body>Generating in the background... Retry/reload later.</body></html>")
+	// fmt.Fprint(w, "<html><body>Generating in the background... Retry/reload later.</body></html>")
 
 }
 
