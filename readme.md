@@ -14,5 +14,5 @@ go run main.go
 2. Open the website in the browser.  Watch the error.  Reload a few times, until you see the image.
 
 
-3. Open the image url directly in the browser ( "http://localhost:8080/").   Note how it shows a graceful message when it gets a 423 error.  Reload a few times until the image is displayed.
+3. Open the image url directly in the browser ( "http://localhost:8080/myimage").   Note how it shows a graceful message when it gets a 423 error.  Reload a few times until the image is displayed.
 
